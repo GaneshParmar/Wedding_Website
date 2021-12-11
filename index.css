@@ -12,11 +12,15 @@
 .bg_hide{
     display: none;
 }
+#hide{
+    display: none;
+}
 /* commom tags end */
 
 body{
     width: 100%;
     height: fit-content;
+    /* overflow: hidden; */
 }
 
 
@@ -75,6 +79,9 @@ body{
     border-radius: 40px;
     font-size: 0.7em;
     z-index: 2;
+}
+.whatsapp.bg_hide{
+    display: none;
 }
 /* Moving information */
 
@@ -138,9 +145,13 @@ body{
         align-items: center;
         padding: 3%;
         padding-right: 4%;
-        background-color: #ffffff;
+        -webkit-box-shadow: 0 8px 6px -6px rgb(37, 37, 37);
+        -moz-box-shadow: 0 8px 6px -6px rgb(24, 24, 24);
+        box-shadow: 0 8px 6px -6px rgb(12, 12, 12);
+        /* box-shadow: 0px -2px 2px 2px rgb(216,148,10); */
         /* background-color: #282828 ; */
-        /* z-index: 10; */
+        z-index: 10;
+        background-color: #3e1062;
     }
     nav>.logo_name{
         /* font-family: 'Lato',sans-serif;
@@ -154,14 +165,14 @@ body{
         /* line-height: 10px; */
     }
     /* nav>.logo_name>div>b{
-        color: #3e1062;
+        color: #fff;
     } */
     nav>.logo_name>div{
         display: flex;
         align-items: center;
         justify-content:center;
         /* color: rgb(252, 252, 252); */
-        color: #3e1062;
+        color: #fff;
     }
     nav>.logo_name>div>img{
         /* display: none; */
@@ -174,7 +185,7 @@ body{
         justify-content: center;
         height: 50px;
         width:50px;
-        border: 2px solid #3e1062;
+        /* border: 2px solid #fff; */
         /* padding: 1%; */
         border-radius: 5px;
         /* background-color: #fff; */
@@ -183,9 +194,9 @@ body{
         position: relative;
         width: 35px;
         height: 5px;
-        border-radius: 5px;
+        /* border-radius: 5px; */
         /* background-color: rgba(255, 255, 255, 0.87); */
-        background-color: #3e1062;
+        background-color:#fff;
         transition: all 0.4s ease-in-out;
     }
     .hamburger_wrap>.hamburger_icon.open{
@@ -200,9 +211,9 @@ body{
         height: 5px; */
         width: 100%;
         height: 100%;
-        border-radius: 5px;
+        /* border-radius: 5px; */
         /* background-color: rgb(236, 233, 233); */
-        background-color: #3e1062;
+        background-color: #fff;
         transition: all 0.4s ease-in-out;
     }
     .hamburger_wrap>.hamburger_icon::before{
@@ -226,19 +237,20 @@ body{
         display: block;
         width: 100%;
         height: 85vh;
-        background-color: #fff;
+        background-color: #ffffff;
         /* top: 100%; */
         top: 100%;
         left: -100%;
-        color: #fff;
+        color: #3e1062;
         /* top: -100%; */
         transition: all 0.4s ease-in-out;
-        z-index: 3;
+        /* z-index: 50 !important; */
     }
-    .nav_items>ul{
+    .nav_items>ul,ul{
         display: block;
         /* padding: 1%; */
         list-style: none;
+        z-index: 20;
     }
     .nav_items>ul>hr{
         width: 90%;
@@ -256,38 +268,46 @@ body{
         font-size: 1.5em;
         font-weight: 900;
         /* color: rgba(255, 255, 255, 0.726); */
-        color: white;
+        color: #fff;
         border-radius: 60px;
         font-family: 'Poppins',sans-serif;
         background-color: #3e1062;
         /* text-decoration: underline; */
     }
-    .nav_items>ul>li{
+    .nav_items>ul>li,li{
         width: 100%;
         /* padding: 10px; */
         text-align: center;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: 400;
         font-size: 1.2em;
+        font-weight: 400;
     }
     .nav_items>ul>.contact{
         display: flex;
         justify-content: space-evenly;
     }
-    .nav_items>ul>li>a{
+    .nav_items>ul>li>a,li>a{
         text-decoration: none;
         padding: 10px;
         /* color: rgba(255, 255, 255, 0.712); */
-        color: black;
+        color: gray;
         display: block;
         height: 100%;
+        pointer-events: visible;
+    }
+    .nav_items>ul>li>a.active{
+        color: black;
+    }
+    .nav_items>ul>li>a:hover{
+        color: black;
     }
     .nav_items>ul>li.so_links{
         display: flex;
         justify-content: space-evenly;
     }
     .nav_items>ul>li.so_links>a>p,a>p{
-        color: #3e106221;
+        color: #3e1062;
         font-size: 0.6em;
     }
     .nav_items>footer{
@@ -303,15 +323,18 @@ body{
     }
     /*  */
     /* Landing page css */
+    .whatsapp.bg_hide{
+        display: flex;
+    }
     .whatsapp{
         position: fixed;
-        bottom: 30px;
-        right: 20px;
+        bottom: 5%;
+        right: 20px !important;
+        /* left: ; */
         width: fit-content;
-        padding: 5px 20px;
+        padding: 3px 10px;
         background-color:#25D366;
         color: 	#fff;
-        display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
@@ -319,48 +342,153 @@ body{
         font-weight: bolder;
         font-size: 1em;
         border-radius: 40px;
-        z-index: 2;
+        z-index: 2;        
+        /* box-shadow:  1px 1px 5px 6px rgba(204, 204, 204, 0.295); */
+        box-shadow: 0px 3px 10px rgba(95, 89, 89, 0.644) ;
+    }
+    .whatsapp:hover{
+        box-shadow: 0px 0px 0px 1px #00ff5ea9 ;
     }
     .landing_pg{
+        min-width:100vw !important;
+        height: 70vh;
+        /* background-color: gray; */
+        overflow: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        pointer-events: none;
+    }
+    .landing_pg>.fake_slider{
+        position: absolute;
+        display: flex;
+        z-index: 9;
         width: 100%;
         height: 70vh;
-        background-color: gray;
-        overflow: scroll;
+        background: none;
+        /* overflow-y: scroll; */
+        overflow-x: auto;
+        pointer-events: visible;
+    }
+    .landing_pg>.fake_slider::-webkit-scrollbar{
+        display: none;
+    }
+    .landing_pg>.fake_slider>.slider_f{
+        position: relative;
+        width: 120vw;
+        display: flex;
+        background: none;
+        /* background-color: rgba(0, 0, 0, 0); */
+    }
+    .landing_pg>.fake_slider>.slider_f>.fake_1,.fake_2{
+        position: relative;
+        width: 90vw;
+        height: 100%;
+    }
+    .fake_2{
+        width: 30vw;
     }
     .landing_pg>.container{
         width: fit-content;
         height: 100%;
-        background-color: white;
-        display: flex;
-        /* flex-wrap: wrap; */
+        background-color: rgb(0, 0, 0) !important;
+        display: inline-flex;
+        /* display: none; */
+        flex-direction: row;
+        position: relative;
+        transform: translateX(0%);
+        transition: transform 0.3s ease-out;
+        user-select: none;
+    }
+
+    /* dir is direction arrow */
+
+    .landing_pg>.dir{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        /* background-color: red; */
+        z-index: 2;
+        width: fit-content;
+    }
+    .landing_pg>.dir:active{
+        background-color: #616161;
+    }
+    .landing_pg>.dir>img{
+        width: 60%;
+        opacity: 0.8;
+    }
+    .left_dir{
+        left: 0;
+        text-align: left;
+    }
+    .right_dir{
+        right: 0;
+        text-align: right;
     }
     .landing_pg>.container>.wedding_img{
+        position: relative;
         width: 100vw;
         height: 100%;
-        background: url('./Images/wedding_real_work_1.jfif') no-repeat;
-        background-size: 100%;
+        background: url('./Images/wedding_ho.jpeg') no-repeat center;
+        background-size: cover;
         display: flex;
         /* justify-content: flex-end; */
         align-items: center;
         flex-direction: column;
         color: white;
+        pointer-events: visible;
+        /* overflow: scroll; */
+        /* opacity: 1; */
     }
+    /* .landing_pg::-webkit-scrollbar {
+        display: none;
+      } */
+    .landing_pg>.manual_slide{
+        position: absolute;
+        left: 0;
+        /* top: 0%; */
+        transform: translateY(-170%);
+        width: 100%;
+        /* background-color: white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .landing_pg>.manual_slide>.circle{
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        margin-left: 20px;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .landing_pg>.manual_slide>.circle.active{
+        background-color: rgb(184, 184, 184);
+    }
+
     .landing_pg>.container>.wedding_img.img_2{
-        background: url('./Images/wedding_pose_photroshoot.jfif') no-repeat;
+        background: url('./Images/mobile_ethnic-wedding-sherwani-622807.jpg') no-repeat;
         background-size: 100%;
     }
     .landing_pg>.container>.wedding_img.img_3{
-        background: url('./Images/close_range_kid_phto.jfif') no-repeat;
+        /* background: url('./Images/close_range_kid_phto.jfif') no-repeat; */
+        background: url('./Images/p_d_pic\ \(3\).png') no-repeat center;
         background-size: 100%;
     }
     .landing_pg>.container>.wedding_img>.info{
-        position: relative;
-        top: 70%;
+        position: absolute;
+        /* top: 70%; */
+        bottom: 0;
         width: 100%;
         padding: 1%;
         margin: 0 auto;
         text-align: center;
         background-color: rgba(46, 46, 46, 0.753);
+        padding: 20px 0px;
         /* background-color: yellow; */
     }
     .landing_pg>.container>.wedding_img>.info::before{
@@ -387,15 +515,282 @@ body{
 
         /* display: none; */
     }
+    .grabbing{
+        cursor: grabbing;
+    }
     /*  */
+
+    /* Gallery Css Here */
+    .g_container{
+        position: relative;
+        margin: 50px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .g_container>.g_heading{
+        width: 85%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .g_container>.g_heading>h2{
+        background-color: #3e1062;
+        color: white;
+        margin-bottom: 15px;
+        font-family: 'Baloo Bhai 2',cursive;
+    }
+    .g_container>.g_heading>p{
+        position: relative;
+        font-family: 'Lato';
+        font-size: 0.9em;
+        text-align: center;
+        line-height: 20px;
+        letter-spacing: 0.4px;
+        color: #3e106288;
+        /* background-color: black;
+        color: white; */
+    }
+    .g_container>.g_heading>p>i{
+        color: #3e1062;
+        /* font-size: 0.6em; */
+        position: absolute;
+    }
+    .g_container>.g_heading>p>i:nth-of-type(1){
+        left: -10px;
+    }
+    .g_container>.g_heading>p>i:nth-of-type(2){
+        position: relative;
+        /* right: 20%; */
+    }
+
+    /* Css Photo wrap Css */
+    .photos_wrap{
+        display: flex;
+        width: 95%;
+        flex-wrap: wrap;
+    }
+    .samp_img{
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #3e106250;
+        font-size: 1.5em;
+        font-weight: 900;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    /* First row */
+    .photos_wrap>.samp_img_50{
+        position: relative;
+        width: 50%;
+    }
+
+    /* Second Row */
+    .photos_wrap>.samp_img_100{
+        width: 100%;
+    }
+    /* Third Row */
+    .photos_wrap>.samp_img_40{
+        width: 40%;
+    }
+    .photos_wrap>.samp_img_60{
+        width: 60%;
+    }
+    /* Last Row */
+    .photos_wrap>.samp_img_100{
+        width: 100%;
+    }
+    /*  */
+
+
+    /* All images placed here */
+    .stand_img_sam{
+        /* background: url('./Images/20211016162850_IMG_0354.JPG') ; */
+        background: url('./Images/p_d_pic\ \(1\).png') ;
+        background-size:auto;
+    }
+    .wed_pho_shoot{
+        background: url('./Images/wedding_pose_photroshoot.jfif');
+        /* background-size: contain !important; */
+    }
+    .wed_pho_shoot_1{
+        background: url("./Images/photo_clicked.jfif");
+        /* background-size: contain !important; */
+    }
+    .wed_real_shoot{
+        background: url('./Images/wedding_sample_2.jpg');
+    }
+    .wed_stand_bride{
+        background: url('./Images/mobile_ethnic-wedding-sherwani-622807.jpg');
+        background-position: top !important;
+    }
+    .wed_100_0{
+        background: url('./Images/wedding_shoot.jfif');
+    }
+    .samp_img{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*  */
+    /* Galeery Css End */
+
+    /* My Team Css */
+    .about_us{
+        align-items: center;
+        text-align: center;
+    }
+    .about_us>h2{
+        font-family: 'Baloo Bhai 2';
+        color: #fff;
+        width: 80%;
+        margin: 0 auto;
+        /* padding: 0px 70px; */
+        /* border-radius: 100px; */
+        background-color: #3e1062;
+    }
+    .about_us>.t_mem{
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        color: #fff;
+        padding: 20px 20px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px #8d8d8d;
+    }
+    .about_us>.t_mem{
+        font-family: 'Poppins';
+    }
+    .about_us>.t_mem>.mem_info>h5{
+        font-size: 1.2em;
+        margin: 10px 0px 7px 0px;
+        font-weight: 900;
+        color: #3e1062;
+        border-bottom: 0.1px solid rgba(128, 128, 128, 0.158);
+    }
+    .about_us>.t_mem>.mem_info>p{
+        font-size: 0.9em;
+        color: rgb(185, 185, 185);
+    }
+    .about_us>.t_mem>h4{
+        margin-top: 30px;
+        background-color: #d1d2d3;
+    }
+    .about_us>.t_mem>.follow{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        /* background-color: #3e1062; */
+        padding-top: 10px;
+    }
+
+    /* My team Css End */
+
+    /* Footer Css */
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #3e1062;
+        padding: 10px 0px;
+    }
+    footer>.f_wrap>ul>li{
+        padding: 0px;
+    }
+    footer>.f_wrap>ul>li>a{
+        /* display: flex; */
+        padding: 4px;
+        text-align: center;
+        /* text-decoration: underline !important; */
+        color: gray;
+    }
+    footer>.f_wrap>ul>li>a.active{
+        text-decoration: underline;
+        color: #fff;
+    }
+    footer>.f_wrap>ul>li>a:hover{
+        color: #fff;
+        text-decoration: underline;
+    }
+    /* foot */
+    footer>.f_wrap{
+        width: 80%;
+        text-align: center;
+    }
+    /* ad_wrap is address wrap */
+    footer>.f_wrap>.ad_wrap{
+        margin: 5px 0px;
+        /* line-height: 25px; */
+    }
+    footer>.f_wrap>.ad_wrap>h3{
+        color: #fff;
+        width: 200px;
+        margin: 0 auto;
+        font-weight: 300;
+        text-align: center;
+        font-family: 'Roboto',sans-serif;
+    }
+    footer>.f_wrap>.ad_wrap>button{
+        outline: none;
+        border: none;
+        width: 300px;
+        margin: 10px 0px;
+        padding: 10px;
+        font-family: 'Roboto',sans-serif;
+        color: #3e1062;
+        font-weight: 400;
+    }
+    footer>.f_wrap>.ad_wrap>button>img{
+        vertical-align: middle;
+        margin-left: 3px;
+    }
+    footer>p{
+        color: gray;
+        font-size: 0.8em;
+    }
+
+    /* Map Css */
+    footer>.f_wrap>.ad_wrap>iframe{
+        height: 0px;
+        transition: all 0.8s ease-in-out;
+    }
+    footer>.f_wrap>.ad_wrap>iframe.show{
+        height: 300px;
+    }
+    /* Map css end */
+    /* Footer Css End */
+
 }
 
-
+@media (max-width:400px) {
+    .whatsapp{
+        right: -90%;
+    }
+}
 
 /* Some animation */
 @keyframes marquee {
     0%   { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
 }
+/* Auto slide */
+@keyframes auto_slide {
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
 
 /*  */
+/*  */
+
+/* Css code pen caros */
+
+
