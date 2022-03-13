@@ -1,0 +1,16 @@
+bg:-#edeb2b
+color:-#160d07
+//Swipe Action
+$('body').swipe({
+        swipe: function(event, direction, distance, duration, fingerCount) {
+            switch (direction) {
+                case 'left':
+                    // Code here
+                    break;
+                case 'right':
+                   //Code here
+                   break;
+            }
+        },
+        allowPageScroll: "vertical"
+    });
