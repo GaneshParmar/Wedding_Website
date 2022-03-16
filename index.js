@@ -154,7 +154,8 @@ function getCT_after_t_end(index) {
 function touchStart() {
   // cancelAnimationFrame(slide_auto)
   return function (event) {
-    // auto_slide=false
+    target.style.animation="none"
+    auto_slide=false
     if(slide.scrollLeft==25){
       currentIndex=0
     }
@@ -199,7 +200,6 @@ function touchMove(event) {
 
 function touchEnd() {
   prevTransalte=currentTranslate
-  auto_slide=true
   slide.scrollLeft=30
   isDragging=false
   cancelAnimationFrame(animation)
@@ -234,13 +234,18 @@ function touchEnd() {
       prevTransalte=currentTranslate
       // active_circle(currentIndex)
     }
-    
-
   }
-
+  auto_slide=true
+  // target.style.animation="auto_slide 9s infinite forwards"
   // slide_auto()
 
 }
+
+
+// Auto Slide 
+// setInterval(() => {
+  
+// }, 3000);
 
 
 // function touchStart(index) {
@@ -322,6 +327,7 @@ function chngeSlide() {
   console.log("Current Index is ",currentIndex)
   console.log(direction*currentIndex*100)
   target.style.transform=`translateX(${direction*currentIndex*100}vw)`;
+
 }
 
 function animation(index) {
