@@ -1,4 +1,4 @@
-const manual_btn_circles = document.querySelectorAll('.circle');
+// const manual_btn_circles = document.querySelectorAll('.circle');
 
 // For Time being the pc version not available
 // Small screen Nav bar 
@@ -13,233 +13,261 @@ function show_menu(ele, nav_menu) {
     nav_items.style.left = "-100%";
   }
 }
+
+
+$(document).ready(function() {
+    
+  $("#banner-area .owl-carousel").owlCarousel({
+      items:1,
+      loop:true,
+      margin:10,
+      autoplay:true,
+      autoplayTimeout:3000,
+      autoplayHoverPause:true
+  });
+
+  var dots = $('.owl-dots').css('position', 'absolute').css('bottom', '5px');
+dots.css('left', 'calc(50% - ' + dots.width()/2+'px)');
+
+$("#imgBtn").on('click',(e)=>{
+  e.target.classList.toggle('showLa');
+  document.querySelector("#photoGallery").classList.toggle('show');
+})
+
+
+
+});
+
+
+
+
 // Reference: codegrepper.com/code-examples/javascript/javascript+touch+scroll+event
 
-var lastTouch = null
-var offset=0
-// var offset_y=0
-var max_offset=40
-var firstTouch=null
-const landing_pg=document.querySelector(".landing_pg");
-const target=document.getElementById('container'),
-slide=document.getElementById("fake_slider"),
-slides=Array.from(document.querySelectorAll('.wedding_img'))
+// var lastTouch = null
+// var offset=0
+// // var offset_y=0
+// var max_offset=40
+// var firstTouch=null
+// const landing_pg=document.querySelector(".landing_pg");
+// const target=document.getElementById('container'),
+// slide=document.getElementById("fake_slider"),
+// slides=Array.from(document.querySelectorAll('.wedding_img'))
 
-let 
-last_scroll_left=0,
-current_scroll_left=0,
-isMoving=false,
-isDragging=false,
-isScrollLeft=false,
-grabbing=false,
-startPos=0,
-startPosY=0,
-currentTranslate,
-prevTransalte=0,
-animationID=0,
-currentIndex=0,
-direction=0,
-last_index=slides.length-1,
-auto_slide=true,
-scrn_width=window.innerWidth
+// let 
+// last_scroll_left=0,
+// current_scroll_left=0,
+// isMoving=false,
+// isDragging=false,
+// isScrollLeft=false,
+// grabbing=false,
+// startPos=0,
+// startPosY=0,
+// currentTranslate,
+// prevTransalte=0,
+// animationID=0,
+// currentIndex=0,
+// direction=0,
+// last_index=slides.length-1,
+// auto_slide=true,
+// scrn_width=window.innerWidth
 
 
 
-    // ToucH Events
-    slide.addEventListener('touchstart',touchStart())
-    slide.addEventListener('touchend',touchEnd)
-    slide.addEventListener('touchmove',touchMove)
+//     // ToucH Events
+//     slide.addEventListener('touchstart',touchStart())
+//     slide.addEventListener('touchend',touchEnd)
+//     slide.addEventListener('touchmove',touchMove)
     
-    // Mouse Events
-    slide.addEventListener('mousedown',touchStart())
-    slide.addEventListener('mouseup',touchEnd)
-    slide.addEventListener('mouseleave',touchEnd)
-    slide.addEventListener('mousemove',touchMove)    
+//     // Mouse Events
+//     slide.addEventListener('mousedown',touchStart())
+//     slide.addEventListener('mouseup',touchEnd)
+//     slide.addEventListener('mouseleave',touchEnd)
+//     slide.addEventListener('mousemove',touchMove)    
   
 
 
 
 
-// landing_pg.scrollLeft=360
+// // landing_pg.scrollLeft=360
 
-// Disable context menu
-// window.oncontextmenu=function (event) {
-//   event.preventDefault()
-//   event.stopPropagation()
-//   return false
+// // Disable context menu
+// // window.oncontextmenu=function (event) {
+// //   event.preventDefault()
+// //   event.stopPropagation()
+// //   return false
+// // }
+
+// function getPosX(event) {
+//   return event.type.includes('mouse') ? event.pageX :
+//     event.touches[0].clientX
 // }
 
-function getPosX(event) {
-  return event.type.includes('mouse') ? event.pageX :
-    event.touches[0].clientX
-}
-
-// function animation(index) {
+// // function animation(index) {
 
 
-//   if(isDragging){
-//     // console.log('ok')
-//     setSliderPosition();
-//     requestAnimationFrame(animation)
+// //   if(isDragging){
+// //     // console.log('ok')
+// //     setSliderPosition();
+// //     requestAnimationFrame(animation)
+// //   }
+// // }
+
+// function setSliderPosition() {
+//   // return target.style.transform=`translateX(${currentTranslate}px)`;
+//   return landing_pg.scrollLeft=currentIndex*scrn_width
+// }
+
+// function active_circle(manual_slide=1) {
+//   console.log(currentIndex)
+//   for(var i=0;i<last_index+1;i++){
+//     if(manual_btn_circles[i].classList.contains('active')){
+//       manual_btn_circles[i].classList.remove('active');
+//     }
+//   }
+//   if(!(manual_btn_circles[currentIndex].classList.contains('active'))){
+//     if(currentIndex==last_index && manual_slide==1){
+//       manual_btn_circles[0].classList.add('active');
+//     }
+//     else if(currentIndex==last_index && manual_slide==0){
+//       manual_btn_circles[last_index].classList.add('active');
+//     }
+//     else{
+//       manual_btn_circles[currentIndex+manual_slide].classList.add('active');
+//     }
 //   }
 // }
 
-function setSliderPosition() {
-  // return target.style.transform=`translateX(${currentTranslate}px)`;
-  return landing_pg.scrollLeft=currentIndex*scrn_width
-}
 
-function active_circle(manual_slide=1) {
-  console.log(currentIndex)
-  for(var i=0;i<last_index+1;i++){
-    if(manual_btn_circles[i].classList.contains('active')){
-      manual_btn_circles[i].classList.remove('active');
-    }
-  }
-  if(!(manual_btn_circles[currentIndex].classList.contains('active'))){
-    if(currentIndex==last_index && manual_slide==1){
-      manual_btn_circles[0].classList.add('active');
-    }
-    else if(currentIndex==last_index && manual_slide==0){
-      manual_btn_circles[last_index].classList.add('active');
-    }
-    else{
-      manual_btn_circles[currentIndex+manual_slide].classList.add('active');
-    }
-  }
-}
+// // Manual Click
+// // function chnge_slide(direction,auto=false) {
+// //     // if(!auto){
+// //     //   cancelAnimationFrame(slide_auto)
+// //     // }
+// //     active_circle();
+// //     if(currentIndex==2 && direction==-1) {
+// //       currentTranslate=0
+// //       currentIndex=0
+// //       prevTransalte=0
+// //       target.style.transition='none'
+// //       return target.style.transform=`translateX(${currentTranslate}px)`;
+// //     }
+// //     else if(currentIndex==0 && direction==1){
+// //       currentTranslate=getCT_after_t_end(last_index)
+// //       currentIndex=last_index
+// //       prevTransalte=currentTranslate
+// //       target.style.transition='none'
+// //       return target.style.transform=`translateX(${currentTranslate}px)`;
+// //     }
+// //     else{
+// //       const window_width=window.innerWidth
+// //       currentTranslate=currentTranslate+(direction*window_width)
+// //       prevTransalte=currentTranslate
+// //       currentIndex=currentIndex-direction
+// //       target.style.transition='transform 0.3s ease-out'
+// //       return target.style.transform=`translateX(${currentTranslate}px)`;
+
+// //     }
+
+// // }
 
 
-// Manual Click
-// function chnge_slide(direction,auto=false) {
-//     // if(!auto){
-//     //   cancelAnimationFrame(slide_auto)
-//     // }
-//     active_circle();
-//     if(currentIndex==2 && direction==-1) {
-//       currentTranslate=0
-//       currentIndex=0
-//       prevTransalte=0
-//       target.style.transition='none'
-//       return target.style.transform=`translateX(${currentTranslate}px)`;
-//     }
-//     else if(currentIndex==0 && direction==1){
-//       currentTranslate=getCT_after_t_end(last_index)
-//       currentIndex=last_index
-//       prevTransalte=currentTranslate
-//       target.style.transition='none'
-//       return target.style.transform=`translateX(${currentTranslate}px)`;
-//     }
-//     else{
-//       const window_width=window.innerWidth
-//       currentTranslate=currentTranslate+(direction*window_width)
-//       prevTransalte=currentTranslate
-//       currentIndex=currentIndex-direction
-//       target.style.transition='transform 0.3s ease-out'
-//       return target.style.transform=`translateX(${currentTranslate}px)`;
+// slide.scrollLeft=25
 
-//     }
 
+// // Get currnt translte after release
+// function getCT_after_t_end(index) {
+//   return -(index*window.innerWidth)
 // }
 
+// function touchStart() {
+//   // cancelAnimationFrame(slide_auto)
+//   return function (event) {
+//     target.style.animation="none"
+//     auto_slide=false
+//     if(slide.scrollLeft==25){
+//       currentIndex=0
+//     }
+//     target.style.transition='transform 0.3s ease-out'
+//     isDragging=true
+//     startPos=getPosX(event)
+//     slide.scrollLeft=30
+//     // startPosY=getPosY(event)
+//     // prevTransalte=currentTranslate
+//   }
+// }
 
-slide.scrollLeft=25
+// function touchMove(event) {
+//   if(slide.scrollLeft!=30){
+//     isScrollLeft=true
+//   }
+//   else{
+//     isScrollLeft=false
+//   }
+//   // console.log(slide.scrollLeft);
+//   // const currentPosition=getPosX(event)
+//   // offset=startPos-currentPosition
+//   if(isDragging && isScrollLeft){
+//     // console.log("moving")
+//       pos=currentIndex+1
+//       const currentPosition = getPosX(event)
+//       offset=currentPosition-startPos
+//       console.log("offset is ",offset)
+//       currentTranslate = currentPosition+prevTransalte -startPos
+//       if(currentIndex==0 && currentTranslate>=0){
+//         currentTranslate=0
+//       }
+//       else if(currentIndex==last_index && offset<0){
+//         console.log("Going aage of the 3rd photo")
+//         currentTranslate=prevTransalte
+//       }
+//       else{
+//         animationID = requestAnimationFrame(animation)
+//       }
+//     }
+//   }
 
+// function touchEnd() {
+//   prevTransalte=currentTranslate
+//   slide.scrollLeft=30
+//   isDragging=false
+//   cancelAnimationFrame(animation)
+//   if(isScrollLeft){
+//     if(offset>max_offset && currentIndex!=0){
+//       console.log("Move left")
+//       currentIndex=currentIndex-1
+//       if(currentIndex==last_index){
+//         direction=-1
+//       }
+//       currentTranslate=getCT_after_t_end(currentIndex)
+//       prevTransalte=currentTranslate
+//       chngeSlide()
+//       active_circle(0)
+//       // setSliderPosition();
+//     }
+//     else if(offset<-(max_offset) && currentIndex!=last_index){
+//       console.log("mover Right")
+//       currentIndex=currentIndex+1
+//       console.log("Current after end Index",currentIndex);
+//       direction=-1
+//       currentTranslate=getCT_after_t_end(currentIndex)
+//       prevTransalte=currentTranslate
+//       chngeSlide()
+//       active_circle(0)
+//       // setSliderPosition();
+//     }
+//     else{
+//       // setSliderPosition();
+//       chngeSlide()
+//       currentTranslate=getCT_after_t_end(currentIndex)
+//       prevTransalte=currentTranslate
+//       // active_circle(currentIndex)
+//     }
+//   }
+//   auto_slide=true
+//   // target.style.animation="auto_slide 9s infinite forwards"
+//   // slide_auto()
 
-// Get currnt translte after release
-function getCT_after_t_end(index) {
-  return -(index*window.innerWidth)
-}
-
-function touchStart() {
-  // cancelAnimationFrame(slide_auto)
-  return function (event) {
-    target.style.animation="none"
-    auto_slide=false
-    if(slide.scrollLeft==25){
-      currentIndex=0
-    }
-    target.style.transition='transform 0.3s ease-out'
-    isDragging=true
-    startPos=getPosX(event)
-    slide.scrollLeft=30
-    // startPosY=getPosY(event)
-    // prevTransalte=currentTranslate
-  }
-}
-
-function touchMove(event) {
-  if(slide.scrollLeft!=30){
-    isScrollLeft=true
-  }
-  else{
-    isScrollLeft=false
-  }
-  // console.log(slide.scrollLeft);
-  // const currentPosition=getPosX(event)
-  // offset=startPos-currentPosition
-  if(isDragging && isScrollLeft){
-    // console.log("moving")
-      pos=currentIndex+1
-      const currentPosition = getPosX(event)
-      offset=currentPosition-startPos
-      console.log("offset is ",offset)
-      currentTranslate = currentPosition+prevTransalte -startPos
-      if(currentIndex==0 && currentTranslate>=0){
-        currentTranslate=0
-      }
-      else if(currentIndex==last_index && offset<0){
-        console.log("Going aage of the 3rd photo")
-        currentTranslate=prevTransalte
-      }
-      else{
-        animationID = requestAnimationFrame(animation)
-      }
-    }
-  }
-
-function touchEnd() {
-  prevTransalte=currentTranslate
-  slide.scrollLeft=30
-  isDragging=false
-  cancelAnimationFrame(animation)
-  if(isScrollLeft){
-    if(offset>max_offset && currentIndex!=0){
-      console.log("Move left")
-      currentIndex=currentIndex-1
-      if(currentIndex==last_index){
-        direction=-1
-      }
-      currentTranslate=getCT_after_t_end(currentIndex)
-      prevTransalte=currentTranslate
-      chngeSlide()
-      active_circle(0)
-      // setSliderPosition();
-    }
-    else if(offset<-(max_offset) && currentIndex!=last_index){
-      console.log("mover Right")
-      currentIndex=currentIndex+1
-      console.log("Current after end Index",currentIndex);
-      direction=-1
-      currentTranslate=getCT_after_t_end(currentIndex)
-      prevTransalte=currentTranslate
-      chngeSlide()
-      active_circle(0)
-      // setSliderPosition();
-    }
-    else{
-      // setSliderPosition();
-      chngeSlide()
-      currentTranslate=getCT_after_t_end(currentIndex)
-      prevTransalte=currentTranslate
-      // active_circle(currentIndex)
-    }
-  }
-  auto_slide=true
-  // target.style.animation="auto_slide 9s infinite forwards"
-  // slide_auto()
-
-}
+// }
 
 
 // Auto Slide 
@@ -323,29 +351,29 @@ function touchEnd() {
 //     }
 // }
 
-function chngeSlide() {
-  console.log("Current Index is ",currentIndex)
-  console.log(direction*currentIndex*100)
-  target.style.transform=`translateX(${direction*currentIndex*100}vw)`;
+// function chngeSlide() {
+//   console.log("Current Index is ",currentIndex)
+//   console.log(direction*currentIndex*100)
+//   target.style.transform=`translateX(${direction*currentIndex*100}vw)`;
 
-}
+// }
 
-function animation(index) {
+// function animation(index) {
 
 
-  if(isDragging || isMoving){
-// console.log('ok')
-    setSliderPosition();
-    requestAnimationFrame(animation)
-  }
-  else{
-    chngeSlide();
-  }
-}
+//   if(isDragging || isMoving){
+// // console.log('ok')
+//     setSliderPosition();
+//     requestAnimationFrame(animation)
+//   }
+//   else{
+//     chngeSlide();
+//   }
+// }
 
-function setSliderPosition(params) {
-  target.style.transform =`translateX(${currentTranslate}px)`;
-}
+// function setSliderPosition(params) {
+//   target.style.transform =`translateX(${currentTranslate}px)`;
+// }
 
 // target.style.left='0%';
 

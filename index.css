@@ -359,6 +359,13 @@ body{
         
     }
     /*  */
+/* Header */
+    header{
+        margin: 10px;
+    }
+
+/*  */
+
     /* Landing page css */
     .whatsapp.bg_hide{
         display: flex;
@@ -386,175 +393,43 @@ body{
     .whatsapp:hover{
         box-shadow: 0px 0px 0px 1px #00ff5ea9 ;
     }
-    .landing_pg{
-        min-width:100vw !important;
-        height: 70vh;
-        /* background-color: gray; */
-        overflow: auto;
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-        pointer-events: none;
-    }
-    .landing_pg>.fake_slider{
-        position: absolute;
-        display: flex;
-        z-index: 9;
-        width: 100%;
-        height: 70vh;
-        background: none;
-        /* overflow-y: scroll; */
-        overflow-x: auto;
-        pointer-events: visible;
-    }
-    .landing_pg>.fake_slider::-webkit-scrollbar{
-        display: none;
-    }
-    .landing_pg>.fake_slider>.slider_f{
-        position: relative;
-        width: 120vw;
-        display: flex;
-        background: none;
-        /* background-color: rgba(0, 0, 0, 0); */
-    }
-    .landing_pg>.fake_slider>.slider_f>.fake_1,.fake_2{
-        position: relative;
-        width: 90vw;
-        height: 100%;
-    }
-    .fake_2{
-        width: 30vw;
-    }
-    .landing_pg>.container{
-        width: fit-content;
-        height: 100%;
-        background-color: rgb(0, 0, 0) !important;
-        display: inline-flex;
-        /* display: none; */
-        flex-direction: row;
-        position: relative;
-        transform: translateX(0%);
-        transition: transform 0.3s ease-out;
-        user-select: none;
-    }
 
-    /* dir is direction arrow */
-
-    .landing_pg>.dir{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        /* background-color: red; */
-        z-index: 2;
-        width: fit-content;
-    }
-    .landing_pg>.dir:active{
-        background-color: #616161;
-    }
-    .landing_pg>.dir>img{
-        width: 60%;
-        opacity: 0.8;
-    }
-    .left_dir{
-        left: 0;
-        text-align: left;
-    }
-    .right_dir{
-        right: 0;
-        text-align: right;
-    }
-    .landing_pg>.container>.wedding_img{
+    .item{
         position: relative;
-        width: 100vw;
-        height: 100%;
-        background: url('./Images/wedding_ho.jpeg') no-repeat center;
+        height: 200px;
         background-size: cover;
-        display: flex;
-        /* justify-content: flex-end; */
-        align-items: center;
-        flex-direction: column;
-        color: white;
-        pointer-events: visible;
-        /* overflow: scroll; */
-        /* opacity: 1; */
+        background-repeat: no-repeat;
     }
-    /* .landing_pg::-webkit-scrollbar {
-        display: none;
-      } */
-    .landing_pg>.manual_slide{
-        position: absolute;
-        left: 0;
-        /* top: 0%; */
-        transform: translateY(-170%);
-        width: 100%;
-        /* background-color: white; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    .banner_1{
+        background-image: url('./Images/MskWork\ \(1\).png');
+    }
+
+    .banner_2{
+        background-image: url('./Images/MskWork\ \(2\).png');
+    }
+
+    .banner_3{
+        background-image: url('./Images/MskWork\ \(3\).png');
+    }
+
+    .banner_4{
+        background-image: url('./Images/MskWork\ \(4\).png');
+    }
+
+    .owl-dots{
+        transform: translateX(-50%);
 
     }
 
-    .landing_pg>.manual_slide>.circle{
-        display: block;
-        width: 13px;
-        height: 13px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        margin-left: 20px;
-        transition: all 0.4s ease-in-out;
+    .owl-dot>span{
+        background-color: #3e10628b !important;
     }
 
-    .landing_pg>.manual_slide>.circle.active{
-        background-color: rgb(184, 184, 184);
-    }
+    .active>span{
+        background-color: #3e1062 !important;
+    } 
 
-    .landing_pg>.container>.wedding_img.img_2{
-        background: url('./Images/mobile_ethnic-wedding-sherwani-622807.jpg') no-repeat;
-        background-size: 100%;
-    }
-    .landing_pg>.container>.wedding_img.img_3{
-        /* background: url('./Images/close_range_kid_phto.jfif') no-repeat; */
-        background: url('./Images/p_d_pic\ \(3\).png') no-repeat center;
-        background-size: 100%;
-    }
-    .landing_pg>.container>.wedding_img>.info{
-        position: absolute;
-        /* top: 70%; */
-        bottom: 0;
-        width: 100%;
-        padding: 1%;
-        margin: 0 auto;
-        text-align: center;
-        background-color: rgba(46, 46, 46, 0.753);
-        padding: 20px 0px;
-        /* background-color: yellow; */
-    }
-    .landing_pg>.container>.wedding_img>.info::before{
-        content: "";
-        position: absolute;
-        display: flex;
-        width: 10px;
-        height: 100%;
-        background-color: #edeb2b;
-        left: 0px;
-        top: 0;
-    }
-    .landing_pg>.container>.wedding_img>.info>h1{
-        font-family: 'Lato';
-        font-size: 3em;
-        font-weight: 900;
-    }
-    .landing_pg>.container>.wedding_img>.info>h4{
-        font-family: 'Poppins',sans-serif;
-        font-size: 1.3em;
-    }
-    .landing_pg>.container>.wedding_img>.info>p{
-        color: rgba(255, 255, 255, 0.589);
-
-        /* display: none; */
-    }
-    .grabbing{
-        cursor: grabbing;
-    }
     /*  */
 
     /* Gallery Css Here */
@@ -605,37 +480,135 @@ body{
 
     .yt_vid{
         position: relative;
-        display: flex;
-        /* justify-content: center; */
-        /* align-items: center; */
         overflow: auto;
         width: 100vw;
-        height: 250px;
+        min-height: 250px;
+        height: fit-content;
         margin: 0px 5px 10px;
         padding: 10px;
-        background: #3e1062;
+        border-bottom: 1px solid #ece3f2;
+        /* background: #3e1062; */
+    }
+
+    .g_container>h3{
+        /* position: absolute; */
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        padding: 0.5em 0.1em;
+        border-top: 1px solid #ece3f2;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     .yt_vid:-webkit-scrollbar{
-        display: none;
+        /* display: none; */
+    }
+    .yt_vid::-webkit-slider-thumb{
+        background-color: #3e1062 !important;
+        color: #3e1062;
     }
 
     .yt_vid>.yt_wrap{
-        width: 500vw;
+        width: fit-content;
         display: flex;
+        position: relative;
+        top: 10%;
     }
 
     .yt_vid>.yt_wrap>.yt_v{
+        display: block;
         position: relative;
-        /* width: 100%; */
-        /* height: 100%; */
-        margin-left: 2px;
+        min-width: 300px;
+        max-width: 310px;
+        min-height: 200px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin: 0 3px;
     }
+
+    .yt_link{
+        text-align: center;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        background-color: #3e1062;
+        color: white;
+        justify-content: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .yt_link>a{
+        display: block;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
 
     .photos_wrap{
         display: flex;
         width: 100%;
         flex-wrap: wrap;
+        height: 600px;
+        overflow: hidden;
+        transition: all 1s ease-in-out;
     }
+
+    #photoGallery.show{
+        height: fit-content !important;
+    }
+
+    #photoGallery.show::before{
+        display: none !important;
+    }
+
+    .photos_wrap::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+        z-index: 1;
+        bottom: 0;
+        -webkit-mask-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 1)) );
+    }
+
+    .photos_wrap>button{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1em 2em;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+        background-color: #3e1062;
+        color: white;
+        display: flex;
+        font-weight: 600;
+        z-index: 2;
+    }
+
+    button.showLa>.showM{
+        display: none;
+    }
+
+    button>.showL{
+        display: none;
+    }
+    button.showLa{
+        background-color: #d2d3d6;
+        color: #3e1062;
+    }
+
+    button.showLa>.showL{
+        display: block;
+    }
+
+    .photos_wrap>button>div>i{
+        font-weight: bolder;
+        animation: bounce 0.5s alternate cubic-bezier(0.5,0.05,1,0.5) infinite;
+    }
+
     .samp_img{
         height: 250px;
         display: flex;
@@ -686,14 +659,14 @@ body{
         /* background-size: contain !important; */
     }
     .wed_real_shoot{
-        background: url('./Images/wedding_sample_2.jpg');
+        background: url('./Images/MskWork\ \(2\).png');
     }
     .wed_stand_bride{
         background: url('./Images/mobile_ethnic-wedding-sherwani-622807.jpg');
         background-position: top !important;
     }
     .wed_100_0{
-        background: url('./Images/wedding_shoot.jfif');
+        background: url('./Images/wedding_sample_2.jpg');
     }
     .samp_img{
         background-position: center;
@@ -842,39 +815,17 @@ body{
     0%   { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
 }
-/* Auto slide */
-/* @keyframes auto_slide {
 
-
-    0%{
-        transform: translateX(0vw);
+/* bounce geeksforgeeks */
+@keyframes bounce {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
-    10%{
-        transform: translateX(0vw);
+    to {
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
     }
-    28%{
-        transform: translateX(0vw);
-    }
-    33%{
-        transform: translateX(-100vw);
-    }
-    /* 50%{
-        transform: translateX(-100vw);
-    } */
-    /* 60%{
-        transform: translateX(-100vw);
-    }
-    65%{
-        transform: translateX(-200vw);
-    }
-    100%{
-        transform: translateX(-200vw);
-    } */
-/* } */
-
-/*  */
-/*  */
-
-/* Css code pen caros */
+}
 
 
