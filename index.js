@@ -16,7 +16,9 @@ function show_menu(ele, nav_menu) {
 
 
 $(document).ready(function() {
-    
+  
+  $("#loader").fadeOut();
+
   $("#banner-area .owl-carousel").owlCarousel({
       items:1,
       loop:true,
@@ -30,7 +32,7 @@ $(document).ready(function() {
 dots.css('left', 'calc(50% - ' + dots.width()/2+'px)');
 
 $("#imgBtn").on('click',(e)=>{
-  e.target.classList.toggle('showLa');
+  $("#imgBtn").hide()
   document.querySelector("#photoGallery").classList.toggle('show');
 })
 

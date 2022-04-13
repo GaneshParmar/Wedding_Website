@@ -33,19 +33,20 @@ body{
     align-items: center;
     z-index: 100;
     transition: all 0.3s ease-in-out;
+    background-color: #fff;
 }
 .loader>img{
-    width: 10%;
+    width: 5%;
 }
 .loader>.logo{
-    width: 7%;
+    width: 5%;
     position: absolute;
     opacity: 1;
 }
 .main-content{
-    opacity: 0;
+    /* opacity: 0; */
     transition: all 0.3s ease-in-out;
-    display: none;
+    /* display: none; */
 }
 
 /* For big screens */
@@ -588,6 +589,10 @@ body{
         z-index: 2;
     }
 
+    .photos_wrap>button>div{
+        pointer-events: none;
+    }
+
     button.showLa>.showM{
         display: none;
     }
@@ -735,13 +740,20 @@ body{
         align-items: center;
         background-color: #3e1062;
         padding: 10px 0px;
+        font-size: 10px;
     }
+
+    footer>.f_wrap>ul{
+        display: flex;
+        margin: 1em 0;
+    }
+
     footer>.f_wrap>ul>li{
         padding: 0px;
     }
     footer>.f_wrap>ul>li>a{
         /* display: flex; */
-        padding: 4px;
+        padding: 1em 0.3em;
         text-align: center;
         /* text-decoration: underline !important; */
         color: gray;
@@ -761,8 +773,8 @@ body{
     }
     /* ad_wrap is address wrap */
     footer>.f_wrap>.ad_wrap{
-        margin: 5px 0px;
-        /* line-height: 25px; */
+        margin: 1em 0px;
+        line-height: 20px;
     }
     footer>.f_wrap>.ad_wrap>h3{
         color: #fff;

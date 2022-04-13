@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
-    <div class="loader">
+    <div class="loader" id="loader">
         <img class="logo" src="/Images/Msk_logo_edited.png" alt="" srcset="">
         <img src="/Images/Rolling-1s-200px (1).gif" alt="" srcset="">
     </div>
@@ -52,9 +52,9 @@
         <div class="nav_items" id="nav_items">
             <ul>
                 <li><a href="#" class="active">Home</a></li><hr>
-                <li><a href="#"> Portfolio</a></li><hr>
-                <li><a href="#">Works</a></li><hr>
-                <li><a href="#">About Us</a></li><hr>
+                <li><a href="#photoGallery"> Portfolio</a></li><hr>
+                <li><a href="#gallary">Works</a></li><hr>
+                <li><a href="#about">About Us</a></li><hr>
                 <!-- <li><a href="#">Contact Us</a></li><hr> -->
                 <br><br>
                 <b>Contact Us</b>
@@ -107,7 +107,7 @@
 
 
 <!-- My gallery -->
-<div class="g_container">
+<div class="g_container" id="gallary">
     <div class="g_heading">
         <h2>Our Gallery</h2>
         <p><i class="fa fa-quote-left"></i>MSK Film's Koyla here are some examples of our team's Photography.Note Some are sample photos taken from google<i class="fa fa-quote-right"></i></p>
@@ -143,11 +143,8 @@
         <div class="samp_img samp_img_60 wed_stand_bride"></div>
         <div class="samp_img samp_img_100 wed_100_0"></div>
         <button id="imgBtn" class="">
-            <div class="showM">
+            <div class="showM hide">
                 Aur Dekhe!<i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="showL">
-                Kam Dekhe!<i class="fas fa-chevron-up"></i>
             </div>
         </button>
     </div>
@@ -155,7 +152,7 @@
 
 <!-- My gallery end -->
 <!-- Our Team Section -->
-<div class="about_us">
+<div class="about_us" id="about">
     <h2>Our Team</h2>
     <div class="t_mem">
         <img src="./Images/msk_director.png" alt="" srcset="" width="150">
@@ -199,12 +196,11 @@
 <!-- Footer -->
 <footer>
     <div class="f_wrap">
-        <img src="./Images/Msk_logo_edited.png" alt="" srcset="" width="150">
         <ul>
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="#"> Portfolio</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#photoGallery"> Portfolio</a></li>
+            <li><a href="#gallary">Works</a></li>
+            <li><a href="#about">About Us</a></li>
         </ul>    
         <hr>
         <div class="ad_wrap">
@@ -222,14 +218,14 @@
 
 </div>
 <!-- Small screen End -->
-    <script>
+    <!-- <script>
         window.addEventListener('load', function() {
             document.getElementsByClassName("loader")[0].style.opacity=0;
             document.getElementsByClassName("loader")[0].style.display="none";
             document.getElementsByClassName("main-content")[0].style.opacity=1;
             document.getElementsByClassName("main-content")[0].style.display="block";
     })
-    </script>
+    </script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="index.js"></script>
