@@ -1,3 +1,10 @@
+// SHOW Loading til window load
+window.onload = function() {
+  
+  $("#loader").fadeOut();
+};
+
+
 // const manual_btn_circles = document.querySelectorAll('.circle');
 
 // For Time being the pc version not available
@@ -17,7 +24,6 @@ function show_menu(ele, nav_menu) {
 
 $(document).ready(function() {
   
-  $("#loader").fadeOut();
 
   $("#banner-area .owl-carousel").owlCarousel({
       items:1,
