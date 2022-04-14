@@ -2,6 +2,15 @@
 window.onload = function() {
   
   $("#loader").fadeOut();
+  $("#main-content").fadeIn();
+
+  $("#logo").css({
+    "top":"0.8em",
+    "left":"0.7em",
+    "transform":"translate(0)"
+  }
+  )
+
 };
 
 
